@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             // Open email client
-            window.location.href = `mailto:hello@blueaura.com.my?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:hello@taxgo.com.my?subject=${subject}&body=${body}`;
             
             // Show success message
             showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
