@@ -105,42 +105,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                company: document.getElementById('company').value,
-                phone: document.getElementById('phone').value,
-                invoices: document.getElementById('invoices').value,
-                message: document.getElementById('message').value
-            };
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
             
-            // Here you would normally send the data to your backend
-            // For now, we'll just show a success message
-            console.log('Form submitted:', formData);
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
             
-            // Create mailto link with form data
-            const subject = encodeURIComponent('TaxGo Inquiry from ' + formData.name);
-            const body = encodeURIComponent(
-                `Name: ${formData.name}\n` +
-                `Email: ${formData.email}\n` +
-                `Company: ${formData.company}\n` +
-                `Phone: ${formData.phone}\n` +
-                `Monthly Invoice Volume: ${formData.invoices}\n\n` +
-                `Message:\n${formData.message}`
-            );
-            
-            // Open email client
-            window.location.href = `mailto:hello@taxgo.com.my?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            contactForm.reset();
+            try {
+                // Get form data
+                const formData = new FormData(contactForm);
+                
+                // Send to Web3Forms
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Show success message
+                    showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
+                    
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    // Show error message
+                    showNotification('Something went wrong. Please try again or email us directly at hello@taxgo.com.my', 'error');
+                    console.error('Form submission error:', data);
+                }
+            } catch (error) {
+                // Show error message
+                showNotification('Something went wrong. Please try again or email us directly at hello@taxgo.com.my', 'error');
+                console.error('Form submission error:', error);
+            } finally {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
         });
     }
     
