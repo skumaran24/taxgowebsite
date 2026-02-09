@@ -28,6 +28,8 @@ jobs:
         run: npm install
       - name: Build blog
         run: npm run build:blog
+      - name: Include blog output in deploy
+        run: sed -i '/^blog\/$/d' .gitignore
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
