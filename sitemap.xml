@@ -62,5 +62,25 @@
     
     <!-- Add more URLs as you create additional pages -->
     <!-- Example: Documentation, API Docs, Blog, etc. -->
-    
+
+    <!-- BLOG POSTS START -->
+    <url>
+        <loc>https://taxgo.blueaura.com.my/blog/</loc>
+        <lastmod>2026-02-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://taxgo.blueaura.com.my/blog/guide-to-lhdn-einvoice-malaysia/</loc>
+        <lastmod>2026-02-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://taxgo.blueaura.com.my/blog/what-is-lhdn-einvoice-malaysia/</loc>
+        <lastmod>2026-02-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <!-- BLOG POSTS END -->
 </urlset>
