@@ -66,9 +66,15 @@
     <!-- BLOG POSTS START -->
     <url>
         <loc>https://taxgo.blueaura.com.my/blog/</loc>
-        <lastmod>2026-02-09</lastmod>
+        <lastmod>2026-02-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://taxgo.blueaura.com.my/blog/handle-free-items-lhdn-einvoice/</loc>
+        <lastmod>2026-02-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://taxgo.blueaura.com.my/blog/guide-to-lhdn-einvoice-malaysia/</loc>
