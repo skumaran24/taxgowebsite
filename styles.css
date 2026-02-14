@@ -449,6 +449,74 @@ section {
 }
 
 /* ================================
+   Product Showcase Section
+   ================================ */
+
+.product-showcase {
+    background: var(--white);
+    padding-bottom: var(--spacing-xl);
+}
+
+.showcase-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.showcase-item:last-child {
+    margin-bottom: 0;
+}
+
+.showcase-reverse {
+    direction: rtl;
+}
+
+.showcase-reverse > * {
+    direction: ltr;
+}
+
+.showcase-image img {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 2px solid var(--light-gray);
+    transition: all 0.3s ease;
+}
+
+.showcase-image img:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.showcase-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-bg);
+}
+
+.showcase-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+@media (max-width: 992px) {
+    .showcase-item {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .showcase-reverse {
+        direction: ltr;
+    }
+
+    .showcase-image {
+        order: -1;
+    }
+}
+
+/* ================================
    Benefits Section
    ================================ */
 
