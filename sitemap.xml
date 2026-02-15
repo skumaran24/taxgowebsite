@@ -66,9 +66,15 @@
     <!-- BLOG POSTS START -->
     <url>
         <loc>https://taxgo.blueaura.com.my/blog/</loc>
-        <lastmod>2026-02-14</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://taxgo.blueaura.com.my/blog/lhdn-einvoice-vs-peppol-malaysia/</loc>
+        <lastmod>2026-02-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://taxgo.blueaura.com.my/blog/why-businesses-need-einvoice-middleware/</loc>
